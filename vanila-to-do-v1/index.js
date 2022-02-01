@@ -14,12 +14,16 @@ let todoItems=[];
 // window.addEventListener('DOMContentLoaded',()=>{
    
 // })
-showTodoList();
+
+if (todoItems && todoItems.length) {
+    showTodoList();
+}
+
 addTodo.addEventListener('click',()=> {  
     let userInput = inputBox.value;
-    
+      
     todoItems.push(userInput)
-
+    
     localStorage.setItem("Todo", JSON.stringify(todoItems));
     inputBox.value='';
     showTodoList();
